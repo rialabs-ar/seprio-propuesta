@@ -482,11 +482,11 @@ const DIAGRAMS = {
         {y: 290, label: 'Búsqueda', icon: '⌕'}
       ].map((d, i) => `
         <g>
-          <text x="420" y="${d.y + 4}" font-family="DM Mono" font-size="9" fill="#ef9f27" letter-spacing="1">${d.label}</text>
-          <text x="410" y="${d.y + 4}" font-family="Saira" font-size="14" fill="#ef9f27">${d.icon}</text>
-          <line x1="310" y1="200" x2="404" y2="${d.y}" stroke="#ef9f27" stroke-width="0.6" stroke-opacity="0.3" stroke-dasharray="3 3"/>
+          <text x="410" y="${d.y + 4}" text-anchor="middle" font-family="Saira" font-size="14" fill="#ef9f27">${d.icon}</text>
+          <text x="424" y="${d.y + 4}" font-family="DM Mono" font-size="9" fill="#ef9f27" letter-spacing="1">${d.label}</text>
+          <line x1="310" y1="200" x2="400" y2="${d.y}" stroke="#ef9f27" stroke-width="0.6" stroke-opacity="0.3" stroke-dasharray="3 3"/>
           <circle r="2" fill="#ef9f27">
-            <animateMotion path="M 310 200 L 404 ${d.y}" dur="${2 + i * 0.25}s" repeatCount="indefinite" begin="${i * 0.4 + 1.4}s"/>
+            <animateMotion path="M 310 200 L 400 ${d.y}" dur="${2 + i * 0.25}s" repeatCount="indefinite" begin="${i * 0.4 + 1.4}s"/>
             <animate attributeName="opacity" values="0;1;1;0" dur="${2 + i * 0.25}s" repeatCount="indefinite" begin="${i * 0.4 + 1.4}s"/>
           </circle>
         </g>
