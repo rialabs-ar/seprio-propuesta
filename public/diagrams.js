@@ -169,18 +169,18 @@ const DIAGRAMS = {
         {y: 80, label: 'Ventas', color: '#4a8fd4'},
         {y: 170, label: 'Service', color: '#f97316'},
         {y: 260, label: 'Repuestos', color: '#7f77dd'},
-        {y: 350, label: 'Admin', color: '#06b6d4'}
+        {y: 350, label: 'Gerencia', color: '#06b6d4'}
       ].map((a, i) => `
         <g>
-          <path d="M 304 230 L 430 ${a.y}" stroke="${a.color}" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="3 3" fill="none">
+          <path d="M 304 230 L 422 ${a.y}" stroke="${a.color}" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="3 3" fill="none">
             <animate attributeName="stroke-dashoffset" from="0" to="-30" dur="${2.5 + i * 0.3}s" repeatCount="indefinite"/>
           </path>
           <circle r="2.5" fill="${a.color}">
-            <animateMotion path="M 304 230 L 430 ${a.y}" dur="${2.5 + i * 0.3}s" repeatCount="indefinite" begin="${i * 0.4 + 1}s"/>
+            <animateMotion path="M 304 230 L 422 ${a.y}" dur="${2.5 + i * 0.3}s" repeatCount="indefinite" begin="${i * 0.4 + 1}s"/>
             <animate attributeName="opacity" values="0;1;1;0" dur="${2.5 + i * 0.3}s" repeatCount="indefinite" begin="${i * 0.4 + 1}s"/>
           </circle>
-          <rect x="440" y="${a.y - 13}" width="64" height="26" rx="2" fill="#100f1e" stroke="${a.color}" stroke-width="0.8"/>
-          <text x="472" y="${a.y + 4}" text-anchor="middle" font-family="DM Mono" font-size="9" fill="${a.color}" letter-spacing="1.5">${a.label.toUpperCase()}</text>
+          <rect x="432" y="${a.y - 14}" width="84" height="28" rx="2" fill="#100f1e" stroke="${a.color}" stroke-width="0.8"/>
+          <text x="474" y="${a.y + 4}" text-anchor="middle" font-family="DM Mono" font-size="9" fill="${a.color}" letter-spacing="1.5">${a.label.toUpperCase()}</text>
         </g>
       `).join('')}
 
