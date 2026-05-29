@@ -542,8 +542,23 @@ const DIAGRAMS = {
           </circle>
           <circle cx="72" cy="140" r="22" fill="#0b0a14" stroke="${c.color}" stroke-width="1.2"/>
           ${i === 0 ? `<circle cx="72" cy="140" r="12" fill="none" stroke="${c.color}" stroke-width="1.2"/><line x1="72" y1="140" x2="72" y2="132" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="6s" repeatCount="indefinite"/></line><line x1="72" y1="140" x2="78" y2="140" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="20s" repeatCount="indefinite"/></line>` : ''}
-          ${i === 1 ? `<path d="M 65 132 L 67 130 Q 72 130 72 135 L 72 138 L 77 144 Q 79 146 77 148 L 75 150 Q 70 150 68 148 L 65 145 Q 63 140 65 132 Z" fill="${c.color}" fill-opacity="0.4" stroke="${c.color}" stroke-width="1"/>` : ''}
-          ${i === 2 ? `<path d="M 60 140 Q 60 130 68 130 Q 72 130 72 140 Q 72 150 76 150 Q 84 150 84 140 Q 84 130 76 130 Q 72 130 72 140 Q 72 150 68 150 Q 60 150 60 140 Z" fill="none" stroke="${c.color}" stroke-width="1.4"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="14s" repeatCount="indefinite"/></path>` : ''}
+          ${i === 1 ? `
+            <!-- Teléfono móvil -->
+            <rect x="64" y="125" width="16" height="30" rx="2.5" fill="none" stroke="${c.color}" stroke-width="1.4"/>
+            <line x1="68" y1="130" x2="76" y2="130" stroke="${c.color}" stroke-width="1.1" stroke-linecap="round"/>
+            <circle cx="72" cy="150" r="1.4" fill="none" stroke="${c.color}" stroke-width="0.9"/>
+            <line x1="68" y1="138" x2="76" y2="138" stroke="${c.color}" stroke-width="0.6" stroke-opacity="0.4"/>
+          ` : ''}
+          ${i === 2 ? `
+            <!-- Gráfico de métricas (barras crecientes + flecha) -->
+            <line x1="60" y1="153" x2="84" y2="153" stroke="${c.color}" stroke-width="0.7" stroke-opacity="0.5"/>
+            <rect x="62" y="146" width="3.4" height="7" fill="${c.color}" opacity="0.55"/>
+            <rect x="68" y="141" width="3.4" height="12" fill="${c.color}" opacity="0.7"/>
+            <rect x="74" y="135" width="3.4" height="18" fill="${c.color}" opacity="0.85"/>
+            <rect x="80" y="129" width="3.4" height="24" fill="${c.color}"/>
+            <path d="M 83.7 129 L 81 132" stroke="${c.color}" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <path d="M 83.7 129 L 86.5 132" stroke="${c.color}" stroke-width="1" fill="none" stroke-linecap="round"/>
+          ` : ''}
 
           <!-- items -->
           ${c.items.map((it, j) => `
