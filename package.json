@@ -1,0 +1,19 @@
+{
+  "name": "seprio-comunicaciones-propuesta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Presentación comercial del Módulo Comunicaciones para Seprio — RIA Labs",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "pull-notes": "node scripts/pull-notes.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

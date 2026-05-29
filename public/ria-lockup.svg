@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" width="640" height="180">
+  <defs>
+    <style>
+      .ria-h  { font-family: 'Saira', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 118px; letter-spacing: 9px; fill: #ffffff; }
+      .labs-h { font-family: 'Saira', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; font-size: 50px;  letter-spacing: 4px; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <!-- Eclipse on the left -->
+  <g transform="translate(100 90)">
+    <circle r="62" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.14"/>
+    <circle r="58" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.22"/>
+    <circle r="54" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.95"/>
+    <circle r="48" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.5"/>
+  </g>
+
+  <!-- Wordmark on the right -->
+  <text class="ria-h"  x="200" y="128">RIA</text>
+  <text class="labs-h" x="478" y="92">Labs</text>
+</svg>

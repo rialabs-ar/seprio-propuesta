@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b0a14" />
+<title>Módulo Comunicaciones · Seprio — RIA Labs</title>
+<meta name="description" content="Presentación comercial del Módulo Comunicaciones para la Plataforma Seprio. RIA Labs." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<div class="app">
+
+  <!-- ============================================================
+       TOP BAR
+       ============================================================ -->
+  <header class="topbar">
+    <div class="brand-left">
+      <div class="brand-ria">
+        <img src="/ria-isotipo.svg" alt="RIA Labs" />
+        <span>RIA Labs · presenta</span>
+      </div>
+    </div>
+
+    <div class="topbar-center">
+      Propuesta · Módulo Comunicaciones · 2026
+    </div>
+
+    <div class="brand-right">
+      <button class="notes-pill" id="notes-pill" type="button" title="Dejar una nota sobre la propuesta">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/>
+        </svg>
+        <span>Notas</span>
+        <span class="who" id="notes-pill-who"></span>
+      </button>
+      <div class="brand-seprio">
+        <span class="sep">SEPRIO</span>
+        <span class="divider"></span>
+        <span class="fiat">
+          <span class="slash g"></span>
+          <span class="slash w"></span>
+          <span class="slash w"></span>
+          <span class="slash r"></span>
+          <span class="fiat-name">FIAT</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       STAGE — SLIDES
+       ============================================================ -->
+  <main class="stage">
+    <div class="slides" id="slides">
+
+      <!-- ====================== SLIDE 1 · COVER ====================== -->
+      <section class="slide cover active" data-slide-id="cover" data-slide-title="Cover">
+        <div class="cover-wrap slide-content">
+          <div class="cover-eyebrow">
+            <span>Plataforma Seprio</span>
+            <span class="dot"></span>
+            <span>Módulo Comunicaciones</span>
+          </div>
+          <h1>La conversación cotidiana,<br/>vuelta <span class="accent">ventaja competitiva</span>.</h1>
+          <p class="cover-sub">Centralización, profesionalización e inteligencia de todas las conversaciones de la concesionaria con sus clientes. Una pieza del sistema integral Seprio desarrollado por RIA Labs.</p>
+          <div class="cover-art" data-art="cover"></div>
+          <div class="cover-cta">
+            <button class="btn primary" data-action="next">
+              <span>Comenzar recorrido</span>
+              <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <button class="btn" data-action="read-more">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+              <span>Leer documento</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== SLIDE 2 · EL PROBLEMA ====================== -->
+      <section class="slide" data-slide-id="problema" data-slide-title="El problema real">
+        <div class="slide-content">
+          <p class="eyebrow">01 · Diagnóstico</p>
+          <h1 class="slide-title">Hoy las conversaciones <em>se evaporan</em>.</h1>
+          <p class="slide-subtitle">Sin un módulo como éste, la operación diaria pierde plata y reputación en lugares que nadie ve.</p>
+          <ul class="slide-bullets">
+            <li><span><b>Leads que se enfrían</b> porque entraron al celular de un vendedor ocupado.</span></li>
+            <li><span><b>Clientes que se pierden</b> cuando renuncia quien los atendía.</span></li>
+            <li><span><b>Reclamos sin defensa</b>: "yo le dije X, él dice Y".</span></li>
+            <li><span><b>Ceguera operativa</b>: la gerencia depende de lo que cada vendedor cuenta de sí mismo.</span></li>
+            <li><span><b>Información valiosa</b> que se evapora día tras día.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Leer más</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="problema"></div>
+      </section>
+
+      <!-- ====================== SLIDE 3 · CENTRALIZACIÓN ====================== -->
+      <section class="slide" data-slide-id="centralizacion" data-slide-title="Centralización">
+        <div class="slide-content">
+          <p class="eyebrow">02 · Cómo funciona</p>
+          <h1 class="slide-title">Un único número.<br/><em>Toda la concesionaria detrás.</em></h1>
+          <p class="slide-subtitle">La empresa, no la persona, es dueña de la relación con el cliente. Mensajes que llegan, mensajes que se distribuyen, mensajes que no se caen.</p>
+          <ul class="slide-bullets">
+            <li><span><b>Un solo número oficial</b> — el cliente siempre tiene la misma referencia.</span></li>
+            <li><span><b>Distribución automática</b> al área correcta: ventas, service, repuestos, administración.</span></li>
+            <li><span><b>Continuidad sin fricción</b>: si un vendedor no está, otro toma la conversación.</span></li>
+            <li><span><b>Comandos rápidos</b> para gerencia desde el mismo WhatsApp.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Leer más</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="centralizacion"></div>
+      </section>
+
+      <!-- ====================== SLIDE 4 · MULTIMEDIA ====================== -->
+      <section class="slide" data-slide-id="multimedia" data-slide-title="Multimedia first-class">
+        <div class="slide-content">
+          <p class="eyebrow">03 · Conversación moderna</p>
+          <h1 class="slide-title">Audios, fotos, videos:<br/><em>activos de la empresa.</em></h1>
+          <p class="slide-subtitle">Una conversación moderna no es sólo texto. El módulo trata todo el material multimedia como información de primera clase, asociada al cliente y al vehículo.</p>
+          <ul class="slide-bullets">
+            <li><span><b>Audios</b> transcritos automáticamente, buscables, analizables.</span></li>
+            <li><span><b>Fotos</b> ligadas al vehículo y al evento. Evidencia, taller, reclamos.</span></li>
+            <li><span><b>Videos</b> para fallas intermitentes que el cliente captura desde su auto.</span></li>
+            <li><span><b>Archivos</b>: presupuestos, patentes, papeles del seguro.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Leer más</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="multimedia"></div>
+      </section>
+
+      <!-- ====================== SLIDE 5 · TELEFONÍA ====================== -->
+      <section class="slide" data-slide-id="telefonia" data-slide-title="Telefonía">
+        <div class="slide-content">
+          <p class="eyebrow">04 · Próxima etapa</p>
+          <h1 class="slide-title">La llamada, parte del mismo hilo.</h1>
+          <p class="slide-subtitle">La siguiente capa incorpora telefonía dentro del sistema. Llamada entrante esta mañana y WhatsApp esta tarde aparecen en una única línea de tiempo.</p>
+          <ul class="slide-bullets">
+            <li><span><b>Llamadas entrantes y salientes</b> desde el mismo número oficial.</span></li>
+            <li><span><b>Grabación automática</b> asociada al cliente y al vehículo.</span></li>
+            <li><span><b>Registro completo</b>: quién llamó, a quién, cuándo, qué área atendió.</span></li>
+            <li><span><b>Transcripción y búsqueda</b> por contenido de la llamada.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Leer más</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="telefonia"></div>
+      </section>
+
+      <!-- ====================== SLIDE 6 · PROFESIONALIZACIÓN ====================== -->
+      <section class="slide" data-slide-id="profesionalizacion" data-slide-title="Profesionalización y supervisión">
+        <div class="slide-content">
+          <p class="eyebrow">05 · Equipo y gerencia</p>
+          <h1 class="slide-title">Subir el nivel de la atención.<br/><em>Conducir con evidencia.</em></h1>
+          <p class="slide-subtitle">Profesionalizar el equipo sin volverlo impersonal. Y darle a la gerencia herramientas reales: datos en lugar de impresiones.</p>
+          <ul class="slide-bullets">
+            <li><span><b>Bandejas</b> claras por vendedor + plantillas + historial del cliente.</span></li>
+            <li><span><b>Panel gerencial</b>: tiempos de respuesta, conversaciones sin contestar, leads que avanzan.</span></li>
+            <li><span><b>Auditoría</b>: cualquier conversación abierta y leíble cuando hace falta.</span></li>
+            <li><span><b>Asignación automática</b> que elimina el "¿quién atiende este?".</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Leer más</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="profesionalizacion"></div>
+      </section>
+
+      <!-- ====================== SLIDE 7 · MÉTRICAS + IA ====================== -->
+      <section class="slide" data-slide-id="metricas-ia" data-slide-title="Métricas e inteligencia">
+        <div class="slide-content">
+          <p class="eyebrow">06 · Inteligencia aplicada</p>
+          <h1 class="slide-title">La conversación,<br/><em>vuelta dato. El dato, vuelto decisión.</em></h1>
+          <p class="slide-subtitle">Cuando las conversaciones cotidianas dejan de ser efímeras, se abre un capítulo completamente nuevo: tasa de conversión real, motivos de caída, comportamiento del cliente.</p>
+          <ul class="slide-bullets">
+            <li><span><b>Resumen automático</b> de hilos largos para decisión gerencial.</span></li>
+            <li><span><b>Detección de leads calientes</b> y priorización automática.</span></li>
+            <li><span><b>Análisis de sentimiento</b>: clientes molestos detectados a tiempo.</span></li>
+            <li><span><b>Búsqueda semántica</b>: "clientes que preguntaron por planes los últimos 30 días".</span></li>
+            <li><span><b>Alertas inteligentes</b>: posibles reclamos en formación.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Leer más</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="metricas-ia"></div>
+      </section>
+
+      <!-- ====================== SLIDE 8 · POR QUÉ IMPORTA ====================== -->
+      <section class="slide" data-slide-id="por-que-importa" data-slide-title="Por qué importa">
+        <div class="slide-content">
+          <p class="eyebrow">07 · Resumen estratégico</p>
+          <h1 class="slide-title">Tres cosas cambian a la vez.</h1>
+          <p class="slide-subtitle">El módulo no resuelve un problema aislado: ordena el presente, abre el futuro y convierte cada conversación en aprendizaje acumulable.</p>
+          <ul class="slide-bullets">
+            <li><span><b>HOY</b> — ordena la atención, profesionaliza al equipo, da visibilidad real.</span></li>
+            <li><span><b>MAÑANA</b> — incorpora telefonía y multimedia avanzada. Central de comunicaciones completa.</span></li>
+            <li><span><b>SIEMPRE</b> — cada conversación se vuelve dato. Cada dato vuelve como inteligencia.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Leer más</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="por-que-importa"></div>
+      </section>
+
+      <!-- ====================== SLIDE 9 · ARQUITECTURA MODULAR (TÉCNICA) ====================== -->
+      <section class="slide" data-slide-id="arquitectura" data-slide-title="Arquitectura modular Seprio">
+        <div class="slide-content">
+          <p class="eyebrow">08 · Cómo se acopla</p>
+          <h1 class="slide-title">Un módulo que <em>encastra</em>,<br/>no que reemplaza.</h1>
+          <p class="slide-subtitle">Comunicaciones se acopla al Seprio Dashboard ya existente (módulo Servicios) y al resto de la plataforma. Cada área accede sólo a lo suyo según su rol.</p>
+          <ul class="slide-bullets">
+            <li><span><b>Arquitectura modular</b>: cada módulo cubre una operación, se desarrolla y se acopla.</span></li>
+            <li><span><b>Roles por área</b>: el usuario de service ve sólo lo suyo. El de ventas, lo suyo. La gerencia, todo.</span></li>
+            <li><span><b>No es un CRM genérico</b>: cero curva de aprendizaje, cero ruido de pantallas que no usás.</span></li>
+            <li><span><b>Datos compartidos</b>: cliente, vehículo, historial — una sola fuente de verdad.</span></li>
+            <li><span><b>IA transversal</b>: cada módulo aporta y consume inteligencia del conjunto.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn" data-action="read-more">Detalle técnico</button>
+            <button class="btn" data-action="add-note">Dejar nota</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="arquitectura"></div>
+      </section>
+
+      <!-- ====================== SLIDE 10 · CIERRE ====================== -->
+      <section class="slide" data-slide-id="cierre" data-slide-title="Cierre">
+        <div class="slide-content">
+          <p class="eyebrow">09 · Próximos pasos</p>
+          <h1 class="slide-title">No es un "WhatsApp empresarial".<br/><em>Es la pieza que faltaba.</em></h1>
+          <p class="slide-subtitle">El Módulo Comunicaciones hace que las relaciones con los clientes dejen de ser invisibles y empiecen a trabajar a favor del negocio.</p>
+          <ul class="slide-bullets">
+            <li><span>Una <b>central de comunicaciones</b> que unifica chat, multimedia y telefonía.</span></li>
+            <li><span>Una <b>herramienta de gestión</b> con datos duros para conducir el equipo.</span></li>
+            <li><span>Una <b>plataforma de inteligencia</b> que convierte conversaciones en decisiones.</span></li>
+          </ul>
+          <div class="slide-actions">
+            <button class="btn primary" data-action="add-note">Dejar feedback final</button>
+            <button class="btn" data-action="first">Volver al inicio</button>
+          </div>
+        </div>
+        <div class="slide-art" data-art="cierre"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER NAV
+       ============================================================ -->
+  <footer class="footer">
+    <div class="progress" id="progress" role="tablist"></div>
+
+    <div class="slide-counter"><b id="cur-num">01</b> / <span id="total-num">10</span></div>
+
+    <div class="nav-controls">
+      <span class="kbd-hint">
+        <kbd>←</kbd><kbd>→</kbd>
+        <span>navegar</span>
+      </span>
+      <button class="nav-btn" id="prev-btn" aria-label="Anterior">
+        <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="nav-btn" id="next-btn" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ============================================================
+     MODAL — Leer más
+     ============================================================ -->
+<div class="modal-overlay" id="readmore-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-eyebrow" id="readmore-eyebrow">Módulo Comunicaciones</div>
+        <h2 class="modal-title" id="readmore-title">Detalle</h2>
+      </div>
+      <button class="modal-close" data-close="readmore-modal" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="readmore-body"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL — Dejar nota
+     ============================================================ -->
+<div class="modal-overlay notes-modal" id="notes-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-eyebrow">Feedback</div>
+        <h2 class="modal-title">Dejar una nota</h2>
+      </div>
+      <button class="modal-close" data-close="notes-modal" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p class="notes-intro">Tu comentario llega directamente al equipo de RIA Labs. Lo usamos para mejorar la propuesta antes de la siguiente conversación.</p>
+      <div class="notes-context" id="notes-context">Contexto: —</div>
+
+      <div class="notes-field" id="name-field">
+        <label for="note-name">Tu nombre</label>
+        <input type="text" id="note-name" autocomplete="name" placeholder="Ej. Juan Pérez" />
+      </div>
+
+      <div class="notes-field">
+        <label for="note-text">Tu nota</label>
+        <textarea id="note-text" placeholder="Una pregunta, una idea, una observación…"></textarea>
+      </div>
+
+      <div class="notes-footer">
+        <span class="notes-status idle" id="notes-status">Listo</span>
+        <button class="btn primary" id="notes-submit">
+          <span>Enviar nota</span>
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     READ-MORE CONTENT — Cargado por slide id
+     ============================================================ -->
+<script id="readmore-data" type="application/json">
+{
+  "cover": {
+    "title": "Una propuesta integral",
+    "html": "<p>El <strong>Módulo Comunicaciones</strong> es la próxima pieza de la Plataforma Seprio: el sistema integral, hecho a medida, que RIA Labs construye junto a Seprio para informatizar de manera inteligente todas las operaciones de la empresa.</p><p>Esta presentación recorre <em>qué resuelve</em>, <em>cómo funciona</em>, <em>qué inteligencia incorpora</em> y <em>cómo se acopla</em> al Seprio Dashboard que ya está funcionando hoy.</p><h3>Por qué hoy</h3><p>La operación diaria de Seprio ya genera una marea de conversaciones por WhatsApp, llamadas, audios, fotos y videos. Esa marea hoy vive dispersa en celulares personales y se evapora. Este módulo la convierte en activo de la empresa.</p>"
+  },
+  "problema": {
+    "title": "El problema real que hay hoy",
+    "html": "<p>En la operación diaria de una concesionaria, sin un módulo como éste, pasan cosas que cuestan plata y reputación:</p><ul><li><strong>Leads que se enfrían</strong> porque entraron al celular de un vendedor ocupado.</li><li><strong>Clientes que se pierden</strong> porque la persona que los atendía no está más en la empresa y nadie sabe qué le habían prometido.</li><li><strong>Reclamos sin defensa</strong>: \"yo le dije X, él dice Y, no hay forma de saber quién tiene razón\".</li><li><strong>Equipos comerciales sin medición real</strong>: la gerencia depende de lo que cada vendedor cuenta de sí mismo.</li><li><strong>Ceguera operativa</strong>: no hay forma de saber cuántas consultas reales entran por día, cuáles convierten, cuáles se caen.</li><li><strong>Información valiosa que se evapora</strong>: cada conversación de hoy podría enseñar algo sobre el negocio mañana, pero como nadie la guarda, esa inteligencia se pierde.</li></ul><p>El Módulo Comunicaciones está pensado específicamente para cerrar todas estas grietas.</p>"
+  },
+  "centralizacion": {
+    "title": "Centralización — la base",
+    "html": "<h3>Un único número oficial</h3><p>Toda la comunicación entrante llega a <strong>un solo número de la concesionaria</strong>, no a celulares personales. El cliente siempre tiene la misma referencia; si un vendedor no está, otro continúa la conversación sin fricciones. <em>La empresa, no la persona, es dueña de la relación con el cliente.</em></p><h3>Distribución inteligente</h3><p>Los mensajes entrantes se distribuyen automáticamente al área o vendedor que corresponde según el tema (ventas, service, repuestos, administración), la disponibilidad y las reglas que defina la gerencia.</p><h3>Atención multi-canal</h3><p>El sistema soporta <strong>chat de texto, audios, fotos, videos y archivos</strong>. Todo eso entra al mismo hilo, queda guardado y queda asociado al cliente y a su vehículo.</p><h3>Comandos rápidos para gerencia</h3><p>Desde el mismo WhatsApp, la gerencia puede consultar al sistema con comandos cortos: cuántos leads entraron hoy, qué servicios están pendientes, qué vendedor está atendiendo a quién. <em>No hace falta abrir una aplicación: la información viene a donde uno ya está.</em></p>"
+  },
+  "multimedia": {
+    "title": "Multimedia como parte de la conversación",
+    "html": "<p>Una conversación moderna no es sólo texto. La gente manda fotos, audios y videos. El módulo trata todo eso como información de primera clase:</p><ul><li><strong>Audios</strong>: quedan guardados, asociados al cliente y transcribibles automáticamente para búsqueda y análisis.</li><li><strong>Fotos</strong>: quedan ligadas al vehículo y al evento. Útiles para evidencia, para mostrar al taller antes de la llegada, para reclamos.</li><li><strong>Videos</strong>: especialmente útiles para fallas intermitentes que el cliente registra desde su auto.</li><li><strong>Archivos</strong>: documentos, presupuestos, fotos de patentes, papeles del seguro.</li></ul><p>Todo este contenido <em>deja de vivir disperso en celulares</em> y pasa a ser un activo de la empresa.</p>"
+  },
+  "telefonia": {
+    "title": "Llamadas telefónicas — la próxima etapa",
+    "html": "<p>La siguiente capa del módulo incorpora la <strong>telefonía</strong> dentro del mismo sistema. Eso significa:</p><ul><li><strong>Llamadas entrantes y salientes</strong> desde el mismo número oficial.</li><li><strong>Grabación de llamadas</strong> asociada al cliente.</li><li><strong>Registro automático</strong>: quién llamó, a quién, cuándo, cuánto duró, qué área atendió.</li><li><strong>Continuidad entre canales</strong>: un cliente que llamó esta mañana y escribió por WhatsApp esta tarde aparece en una sola línea de tiempo unificada.</li><li><strong>Análisis de llamadas</strong>: transcripción automática, búsqueda por contenido, métricas de duración y resultado.</li></ul><p>Esta etapa convierte al módulo en una <em>central de comunicaciones completa</em>, no sólo en un sistema de chat profesionalizado.</p>"
+  },
+  "profesionalizacion": {
+    "title": "Profesionalización y supervisión",
+    "html": "<p>Éste es uno de los ejes más importantes del módulo: <strong>subir el nivel de la atención sin volverla impersonal, y al mismo tiempo darle a la gerencia herramientas reales para conducir el equipo.</strong></p><h3>Para el equipo de ventas y atención</h3><ul><li>Cada vendedor tiene su bandeja de conversaciones claramente identificada.</li><li>Plantillas y respuestas rápidas para no escribir desde cero.</li><li>Historial completo del cliente al alcance: qué autos tiene, cuándo vino, qué reclamó.</li><li>Asignación automática que evita el clásico \"¿quién atiende este?\".</li></ul><h3>Para la gerencia</h3><ul><li>Cuántas conversaciones se abrieron hoy, esta semana, este mes.</li><li>Cuánto tarda cada vendedor en responder.</li><li>Cuántas conversaciones quedaron sin contestar.</li><li>Qué leads avanzaron y cuáles se cayeron.</li><li>Tiempos promedio de cierre.</li><li>Conversaciones específicas, abiertas y leíbles cuando hace falta auditar.</li></ul><p>Para los vendedores honestos es una herramienta. Para la gerencia es una forma de conducir <em>basada en evidencia</em>.</p>"
+  },
+  "metricas-ia": {
+    "title": "Métricas e inteligencia — el nuevo mundo posible",
+    "html": "<p>Cuando las conversaciones cotidianas dejan de ser efímeras y empiezan a quedar registradas de manera ordenada, se abre un capítulo completamente nuevo: <strong>la operación diaria se transforma en datos históricos</strong>, y los datos históricos son la materia prima de la inteligencia.</p><h3>Métricas operativas</h3><ul><li>Volumen de consultas por día, semana, mes.</li><li>Tiempos de primera respuesta y de resolución.</li><li>Tasas de conversión: cuántas consultas terminan en venta, en service confirmado, en visita.</li><li>Distribución por área, por horario, por canal.</li><li>Carga real por vendedor.</li></ul><h3>Métricas avanzadas</h3><ul><li>Tasa de respuesta por vendedor, turno y tipo de consulta.</li><li>Motivos de caída: por qué se enfrían los leads.</li><li>Estacionalidad reflejada en datos propios.</li><li>Comparativas entre vendedores controlando por volumen y tipo de cliente.</li><li>Comportamiento del cliente: cuántas veces escribe antes de comprar.</li></ul><h3>Inteligencia aplicada (IA)</h3><ul><li><strong>Resumen automático</strong> de conversaciones largas.</li><li><strong>Detección de leads calientes</strong> y priorización.</li><li><strong>Análisis de sentimiento</strong> para clientes molestos o muy satisfechos.</li><li><strong>Sugerencias de respuesta</strong> basadas en conversaciones exitosas previas.</li><li><strong>Búsqueda semántica</strong> sobre el corpus completo de conversaciones.</li><li><strong>Alertas inteligentes</strong>: hilos sin respuesta, reclamos en formación, clientes que volvieron a escribir.</li></ul>"
+  },
+  "por-que-importa": {
+    "title": "Por qué importa",
+    "html": "<p>El Módulo Comunicaciones cambia tres cosas a la vez:</p><ol><li><strong>HOY</strong>: ordena la atención al cliente, profesionaliza al equipo y le da a la gerencia visibilidad real.</li><li><strong>MAÑANA</strong>: incorpora telefonía y multimedia avanzada, completando la central de comunicaciones.</li><li><strong>SIEMPRE</strong>: cada conversación que pasa por el sistema <em>se vuelve dato</em>, y cada dato vuelve como inteligencia para tomar mejores decisiones.</li></ol><p>Una concesionaria que habla mucho con sus clientes pero no recuerda lo que se dijo está dejando dinero, oportunidades y aprendizaje sobre la mesa. Este módulo cierra esa fuga y convierte la conversación cotidiana en una ventaja competitiva.</p>"
+  },
+  "arquitectura": {
+    "title": "Arquitectura modular — el detalle técnico",
+    "html": "<h3>Cómo se acopla al Seprio Dashboard</h3><p>El Seprio Dashboard de hoy es el <strong>Módulo Servicios</strong>: control de ingreso/egreso por LPR, flujo de vehículos por sección (recepción, lavado, taller, depósito, terminado), historial por vehículo y por cliente. Esa pieza ya existe, ya está en producción.</p><p>El Módulo Comunicaciones <em>no la reemplaza</em>: <strong>se enchufa al mismo modelo de datos</strong>. Las conversaciones se asocian al mismo cliente, al mismo vehículo, al mismo historial. El service ve la conversación previa con el cliente; ventas ve el último service del auto. Una sola fuente de verdad.</p><h3>Roles por área — no un CRM genérico</h3><p>A diferencia de los CRM del mercado, que muestran una pantalla general donde todo está accesible y nadie sabe dónde mirar, la Plataforma Seprio <strong>presenta a cada usuario sólo las herramientas de su área</strong>. El operador de service no necesita ver el pipeline comercial. El vendedor no necesita ver tickets de taller. La gerencia ve todo, transversalmente.</p><h3>Stack técnico</h3><ul><li><strong>WhatsApp Business API</strong> oficial — número único, multi-agente, multimedia.</li><li><strong>Backend en Node</strong> con Postgres (Supabase) compartido con el resto de los módulos.</li><li><strong>Cola de eventos</strong>: cada mensaje entrante dispara reglas de distribución, etiquetado e IA.</li><li><strong>Integración LLM</strong> (Claude / Gemini) para resumen, sentimiento, búsqueda semántica, sugerencias.</li><li><strong>Telefonía</strong> vía proveedor (Twilio Voice / Telnyx) sobre el mismo número oficial.</li><li><strong>Frontend</strong> sobre el mismo design system del Seprio Dashboard — la experiencia se siente parte de la misma app.</li></ul><h3>Cómo crece la plataforma</h3><p>La arquitectura modular permite que el sistema vaya cubriendo cada operación particular dentro de Seprio de forma orgánica: <em>Servicios (LPR + flujo de taller)</em> → <em>Comunicaciones</em> → <em>Ventas</em> → <em>Repuestos</em> → <em>Administración</em>. Cada módulo aporta y consume datos del conjunto. Cada módulo agrega inteligencia que beneficia al resto.</p><p>El resultado: un software <strong>integral, hecho a medida</strong>, que ataca todos los problemas con IA, sin la latencia ni la curva de aprendizaje larga de los CRM genéricos del mercado.</p>"
+  },
+  "cierre": {
+    "title": "Próximos pasos",
+    "html": "<p>El Módulo Comunicaciones no es un \"WhatsApp empresarial\" más. Es:</p><ul><li>Una <strong>central de comunicaciones</strong> que unifica chat, multimedia y, próximamente, telefonía.</li><li>Una <strong>herramienta de gestión</strong> que profesionaliza al equipo y le da a la gerencia datos duros para conducir.</li><li>Una <strong>plataforma de inteligencia</strong> que convierte conversaciones en información histórica y la información en decisiones.</li></ul><p>Es la pieza que hace que las relaciones con los clientes <em>dejen de ser invisibles</em> y empiecen a trabajar a favor del negocio.</p><h3>De acá en más</h3><p>Si la propuesta entusiasma, el siguiente paso es una sesión de trabajo conjunta para definir:</p><ul><li>Alcance del MVP del módulo.</li><li>Plazos y cronograma de implementación.</li><li>Cómo se hace la transición desde lo que hoy funciona en celulares personales.</li><li>Métricas de éxito acordadas para la primera fase.</li></ul><p>Toda la conversación queda registrada — ahora también la de esta presentación. Dejá tus notas y las recibimos del otro lado.</p>"
+  }
+}
+</script>
+
+<script src="/diagrams.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

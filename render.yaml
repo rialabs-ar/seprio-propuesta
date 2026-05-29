@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: seprio-propuesta
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm install
+    startCommand: node server.mjs
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: ADMIN_KEY
+        generateValue: true
+# Nota: Render free plan no permite discos persistentes.
+# Las notas viven en el filesystem efímero del contenedor. Usar `npm run pull-notes`
+# regularmente o subir a plan Starter + descomentar el bloque `disk` siguiente para durabilidad.
+#   disk:
+#     name: notes-disk
+#     mountPath: /var/data
+#     sizeGB: 1
+# Con disco: setear también env NOTES_DIR=/var/data/notes
