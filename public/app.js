@@ -37,21 +37,31 @@
   }
   const dots = $$('.progress .dot');
 
+  /* ----------- Mobile: floating toggle button (text ↔ art) ----------- */
+  slides.forEach(slide => {
+    if (slide.classList.contains('cover')) return;
+    if (slide.querySelector('.mobile-toggle')) return;
+    const btn = document.createElement('button');
+    btn.className = 'mobile-toggle';
+    btn.setAttribute('data-action', 'toggle-art');
+    btn.setAttribute('type', 'button');
+    btn.innerHTML = '<span class="label-art">↗ Ver diagrama</span><span class="label-text">← Volver al texto</span>';
+    slide.appendChild(btn);
+  });
+
   /* ----------- Navigation ----------- */
   function goTo(idx) {
     if (idx < 0 || idx >= total) return;
     if (idx === current) return;
     slides[current].classList.remove('active');
+    slides[current].classList.remove('show-art');
     slides[current].classList.toggle('prev', idx > current);
     current = idx;
     slides[current].classList.add('active');
     slides[current].classList.remove('prev');
+    slides[current].classList.remove('show-art');
     visited.add(current);
     updateChrome();
-    // Scroll mobile to top of slide
-    if (window.innerWidth <= 880) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   }
 
   function next() { if (current < total - 1) goTo(current + 1); }
@@ -129,6 +139,7 @@
     else if (action === 'first') goTo(0);
     else if (action === 'read-more') openReadMore();
     else if (action === 'add-note') openNotes();
+    else if (action === 'toggle-art') slides[current].classList.toggle('show-art');
   });
 
   /* ----------- Modals ----------- */

@@ -839,12 +839,17 @@ h1.slide-title em {
 }
 
 /* ============================================================
-   MOBILE — split content + art vertically; allow scroll
+   MOBILE — single screen, toggle text ↔ art, NO page scroll
    ============================================================ */
 
+.mobile-toggle { display: none; }
+
 @media (max-width: 880px) {
-  html, body { overflow: auto; height: auto; }
-  .app { height: auto; min-height: 100vh; }
+  html, body {
+    overflow: hidden;
+    height: 100%;
+  }
+  .app { height: 100%; min-height: 0; }
 
   .topbar {
     padding: 12px 18px;
@@ -855,20 +860,24 @@ h1.slide-title em {
   .brand-ria span { display: none; }
 
   .stage {
-    min-height: calc(100vh - 130px);
+    flex: 1;
+    min-height: 0;
+    position: relative;
   }
 
+  /* Slides absolute-positioned inside stage, full size */
   .slide {
-    position: relative;
+    position: absolute;
+    inset: 0;
+    display: none;
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 28px 22px 40px;
+    grid-template-rows: 1fr;
+    gap: 0;
+    padding: 18px 18px 64px;
     transform: none;
     opacity: 0;
     pointer-events: none;
-    display: none;
-    height: auto;
-    min-height: calc(100vh - 130px);
+    height: 100%;
   }
 
   .slide.active {
@@ -878,38 +887,108 @@ h1.slide-title em {
     transform: none;
   }
 
-  .slide-art {
-    height: 240px;
-    order: 2;
-  }
-
+  /* Content + art overlap in the same grid cell.
+     Default: content visible, art hidden. Toggle .show-art to swap. */
   .slide-content {
-    order: 1;
+    grid-row: 1; grid-column: 1;
+    order: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+    overflow: hidden;
   }
 
+  .slide-art {
+    grid-row: 1; grid-column: 1;
+    order: unset;
+    display: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide.show-art .slide-content { display: none; }
+  .slide.show-art .slide-art {
+    display: flex;
+    animation: fade-in 0.35s ease both;
+  }
+
+  /* Mobile-only floating toggle button */
+  .mobile-toggle {
+    display: inline-flex;
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    z-index: 30;
+    padding: 9px 16px;
+    background: rgba(11,10,20,0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--gold);
+    color: var(--gold-hi);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    cursor: pointer;
+    border-radius: 100px;
+    box-shadow: 0 8px 22px -8px rgba(200,134,10,0.45);
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mobile-toggle:active { transform: scale(0.96); }
+
+  /* Show right label depending on state */
+  .slide:not(.show-art) .mobile-toggle .label-art    { display: inline; }
+  .slide:not(.show-art) .mobile-toggle .label-text   { display: none; }
+  .slide.show-art        .mobile-toggle .label-art   { display: none; }
+  .slide.show-art        .mobile-toggle .label-text  { display: inline; }
+
+  /* Cover stays single-column with art inline. No toggle on cover. */
   .slide.cover {
-    padding: 32px 22px;
+    padding: 22px 22px 64px;
+    grid-template-rows: unset;
   }
-
+  .slide.cover .cover-wrap { gap: 12px; }
   .slide.cover .cover-art {
-    height: 200px;
+    flex: 0 0 28vh;
+    max-height: 220px;
   }
+  .slide.cover .mobile-toggle { display: none; }
 
+  /* Tighter typography to fit content without page scroll */
   h1.slide-title {
-    font-size: clamp(28px, 8vw, 38px);
+    font-size: clamp(24px, 7.5vw, 34px);
+    line-height: 1.05;
+    margin-bottom: 10px;
   }
-
   .slide.cover h1 {
-    font-size: clamp(36px, 10vw, 56px);
+    font-size: clamp(32px, 9vw, 48px);
   }
+  .slide-subtitle {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  .slide-bullets {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .slide-bullets li {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .slide-bullets li::before {
+    width: 5px; height: 5px;
+    margin-top: 7px;
+  }
+  .eyebrow { margin-bottom: 12px; font-size: 9px; }
 
-  .slide-subtitle { font-size: 14px; }
-  .slide-bullets li { font-size: 14px; }
+  /* Buttons: more compact */
+  .slide-actions .btn { padding: 8px 12px; font-size: 10px; }
 
   .footer {
-    padding: 12px 18px;
-    position: sticky;
-    bottom: 0;
+    padding: 10px 14px;
   }
 
   .kbd-hint { display: none; }
@@ -923,9 +1002,7 @@ h1.slide-title em {
 
   .notes-pill { padding: 5px 10px; font-size: 9px; }
   .notes-pill .who { display: none; }
-}
 
-/* Touch-friendly tap zones on mobile */
-@media (max-width: 880px) {
-  .nav-btn { width: 44px; height: 44px; }
+  /* Touch-friendly tap zones */
+  .nav-btn { width: 40px; height: 40px; }
 }
