@@ -659,60 +659,69 @@ const DIAGRAMS = {
   cierre: () => `
     <svg viewBox="0 0 520 460" preserveAspectRatio="xMidYMid meet">
       <defs>
-        <radialGradient id="cl-sun" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#ef9f27" stop-opacity="0.5"/>
-          <stop offset="60%" stop-color="#ef9f27" stop-opacity="0.1"/>
+        <radialGradient id="cl-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ef9f27" stop-opacity="0.45"/>
+          <stop offset="55%" stop-color="#ef9f27" stop-opacity="0.08"/>
           <stop offset="100%" stop-color="#ef9f27" stop-opacity="0"/>
         </radialGradient>
       </defs>
 
-      <!-- Sol central -->
-      <circle cx="260" cy="200" r="120" fill="url(#cl-sun)"/>
-      <circle cx="260" cy="200" r="48" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.6"/>
+      <!-- Halo del núcleo -->
+      <circle cx="260" cy="200" r="170" fill="url(#cl-glow)"/>
 
-      <!-- Rayos animados -->
-      ${Array.from({length: 12}).map((_, i) => {
-        const angle = (i / 12) * Math.PI * 2;
-        const x1 = 260 + Math.cos(angle) * 60;
-        const y1 = 200 + Math.sin(angle) * 60;
-        const x2 = 260 + Math.cos(angle) * 100;
-        const y2 = 200 + Math.sin(angle) * 100;
-        return `
-          <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#ef9f27" stroke-width="1" stroke-opacity="0.6">
-            <animate attributeName="stroke-opacity" values="0.6;0.2;0.6" dur="${2 + (i % 3) * 0.5}s" repeatCount="indefinite" begin="${i * 0.1}s"/>
-          </line>
-        `;
-      }).join('')}
+      <!-- Anillo orbital sutil que sostiene los módulos -->
+      <circle cx="260" cy="200" r="150" fill="none" stroke="#ef9f27" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 5"/>
 
-      <!-- Texto central -->
-      <text x="260" y="196" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2.5">PRÓXIMO</text>
-      <text x="260" y="216" text-anchor="middle" font-family="Saira" font-size="16" font-weight="600" fill="#ef9f27">MÓDULO</text>
+      <!-- Conexiones bidireccionales (líneas + partículas en ambas direcciones) -->
+      ${[
+        {x: 260, y: 56, label: 'Comunicaciones', color: '#ef9f27', ly: -24},
+        {x: 402, y: 154, label: 'Ventas',        color: '#4a8fd4', ly: -24},
+        {x: 348, y: 322, label: 'Gerencia',      color: '#06b6d4', ly: 30},
+        {x: 172, y: 322, label: 'Repuestos',     color: '#7f77dd', ly: 30},
+        {x: 118, y: 154, label: 'Servicios',     color: '#10b981', ly: -24}
+      ].map((m, i) => `
+        <!-- línea con flujo animado de dashes -->
+        <line x1="${m.x}" y1="${m.y}" x2="260" y2="200" stroke="${m.color}" stroke-width="0.8" stroke-opacity="0.45" stroke-dasharray="5 4">
+          <animate attributeName="stroke-dashoffset" from="0" to="-36" dur="${2.6 + i * 0.25}s" repeatCount="indefinite"/>
+        </line>
+        <!-- partícula módulo → núcleo (datos hacia la IA) -->
+        <circle r="2.8" fill="${m.color}">
+          <animateMotion path="M ${m.x} ${m.y} L 260 200" dur="${2.4 + i * 0.2}s" begin="${i * 0.4}s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;1;0" dur="${2.4 + i * 0.2}s" begin="${i * 0.4}s" repeatCount="indefinite"/>
+        </circle>
+        <!-- partícula núcleo → módulo (IA hacia el módulo) -->
+        <circle r="2.8" fill="#ef9f27">
+          <animateMotion path="M 260 200 L ${m.x} ${m.y}" dur="${2.4 + i * 0.2}s" begin="${i * 0.4 + 1.3}s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;0.9;0.9;0" dur="${2.4 + i * 0.2}s" begin="${i * 0.4 + 1.3}s" repeatCount="indefinite"/>
+        </circle>
+      `).join('')}
 
-      <!-- Órbita exterior con módulos a venir -->
-      <circle cx="260" cy="200" r="160" fill="none" stroke="#ef9f27" stroke-width="0.4" stroke-opacity="0.2" stroke-dasharray="3 4"/>
+      <!-- Núcleo SEPRIO IA -->
+      <circle cx="260" cy="200" r="68" fill="none" stroke="#ef9f27" stroke-width="0.7" opacity="0.5">
+        <animate attributeName="r" values="62;78;62" dur="3.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.55;0;0.55" dur="3.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="260" cy="200" r="56" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.8"/>
+      <text x="260" y="194" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2.5">PLATAFORMA</text>
+      <text x="260" y="218" text-anchor="middle" font-family="Saira" font-size="20" font-weight="600" fill="#ef9f27" letter-spacing="3">SEPRIO IA</text>
 
-      <g>
-        <animateTransform attributeName="transform" type="rotate" from="0 260 200" to="360 260 200" dur="40s" repeatCount="indefinite"/>
-        ${[
-          {angle: 0, label: 'Comunicaciones', color: '#ef9f27', big: true},
-          {angle: 72, label: 'Ventas', color: '#4a8fd4'},
-          {angle: 144, label: 'Repuestos', color: '#7f77dd'},
-          {angle: 216, label: 'Admin', color: '#06b6d4'},
-          {angle: 288, label: 'Servicios', color: '#10b981', big: true}
-        ].map(m => {
-          const a = (m.angle / 360) * Math.PI * 2;
-          const x = 260 + Math.cos(a) * 160;
-          const y = 200 + Math.sin(a) * 160;
-          return `
-            <g transform="translate(${x} ${y})">
-              <circle r="${m.big ? 10 : 7}" fill="#0b0a14" stroke="${m.color}" stroke-width="${m.big ? 1.4 : 1}"/>
-              <g transform="rotate(${-m.angle})">
-                <text y="${m.big ? 26 : 20}" text-anchor="middle" font-family="DM Mono" font-size="8" fill="${m.color}" letter-spacing="1.5">${m.label.toUpperCase()}</text>
-              </g>
-            </g>
-          `;
-        }).join('')}
-      </g>
+      <!-- Módulos satélite (etiquetas siempre horizontales, sin rotación) -->
+      ${[
+        {x: 260, y: 56, label: 'Comunicaciones', color: '#ef9f27', ly: -24},
+        {x: 402, y: 154, label: 'Ventas',        color: '#4a8fd4', ly: -24},
+        {x: 348, y: 322, label: 'Gerencia',      color: '#06b6d4', ly: 30},
+        {x: 172, y: 322, label: 'Repuestos',     color: '#7f77dd', ly: 30},
+        {x: 118, y: 154, label: 'Servicios',     color: '#10b981', ly: -24}
+      ].map((m, i) => `
+        <g>
+          <circle cx="${m.x}" cy="${m.y}" r="14" fill="#0b0a14" stroke="${m.color}" stroke-width="1.4"/>
+          <circle cx="${m.x}" cy="${m.y}" r="18" fill="none" stroke="${m.color}" stroke-width="0.5" opacity="0.4">
+            <animate attributeName="r" values="14;22;14" dur="${2.6 + i * 0.4}s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.55;0;0.55" dur="${2.6 + i * 0.4}s" repeatCount="indefinite"/>
+          </circle>
+          <text x="${m.x}" y="${m.y + m.ly}" text-anchor="middle" font-family="DM Mono" font-size="9" fill="${m.color}" letter-spacing="1.5">${m.label.toUpperCase()}</text>
+        </g>
+      `).join('')}
 
       <!-- CTA inferior -->
       <text x="260" y="420" text-anchor="middle" font-family="Saira" font-size="14" font-weight="400" fill="#f0ece0">Dejá tu feedback. Lo recibimos del otro lado.</text>
