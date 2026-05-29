@@ -525,31 +525,31 @@ const DIAGRAMS = {
 
       <!-- Tres columnas: hoy / mañana / siempre -->
       ${[
-        {x: 50, label: 'HOY', sub: 'Orden + visibilidad', icon: 'clock', color: '#4a8fd4', items: ['Atención ordenada', 'Equipo profesionalizado', 'Visibilidad real']},
-        {x: 200, label: 'MAÑANA', sub: 'Central completa', icon: 'phone', color: '#ef9f27', items: ['+ Telefonía', '+ Multimedia avanzada', '+ Integraciones']},
-        {x: 350, label: 'SIEMPRE', sub: 'Inteligencia acumulada', icon: 'infinity', color: '#ff1430', items: ['Datos históricos', 'Aprendizaje IA', 'Mejores decisiones']}
+        {x: 32, label: 'HOY', sub: 'Orden + visibilidad', icon: 'clock', color: '#4a8fd4', items: ['Atención ordenada', 'Equipo profesional', 'Visibilidad real']},
+        {x: 188, label: 'MAÑANA', sub: 'Central completa', icon: 'phone', color: '#ef9f27', items: ['+ Telefonía', '+ Multimedia avanzada', '+ Integraciones']},
+        {x: 344, label: 'SIEMPRE', sub: 'Inteligencia acumulada', icon: 'infinity', color: '#ff1430', items: ['Datos históricos', 'Aprendizaje IA', 'Mejores decisiones']}
       ].map((c, i) => `
         <g transform="translate(${c.x} 50)">
-          <rect x="0" y="0" width="120" height="340" rx="4" fill="#100f1e" stroke="${c.color}" stroke-width="1" stroke-opacity="0.5"/>
-          <rect x="0" y="0" width="120" height="48" rx="4" fill="${c.color}" fill-opacity="0.1"/>
-          <text x="60" y="22" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2.5">FASE 0${i+1}</text>
-          <text x="60" y="40" text-anchor="middle" font-family="Saira" font-size="18" font-weight="600" fill="${c.color}" letter-spacing="3">${c.label}</text>
-          <text x="60" y="72" text-anchor="middle" font-family="Saira" font-size="11" fill="#f0ece0" font-weight="300">${c.sub}</text>
+          <rect x="0" y="0" width="144" height="340" rx="4" fill="#100f1e" stroke="${c.color}" stroke-width="1" stroke-opacity="0.5"/>
+          <rect x="0" y="0" width="144" height="48" rx="4" fill="${c.color}" fill-opacity="0.1"/>
+          <text x="72" y="22" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2.5">FASE 0${i+1}</text>
+          <text x="72" y="40" text-anchor="middle" font-family="Saira" font-size="18" font-weight="600" fill="${c.color}" letter-spacing="3">${c.label}</text>
+          <text x="72" y="72" text-anchor="middle" font-family="Saira" font-size="11" fill="#f0ece0" font-weight="300">${c.sub}</text>
 
           <!-- ícono central -->
-          <circle cx="60" cy="140" r="32" fill="none" stroke="${c.color}" stroke-width="0.8" stroke-opacity="0.5">
+          <circle cx="72" cy="140" r="32" fill="none" stroke="${c.color}" stroke-width="0.8" stroke-opacity="0.5">
             <animate attributeName="r" values="32;38;32" dur="${3 + i * 0.5}s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="60" cy="140" r="22" fill="#0b0a14" stroke="${c.color}" stroke-width="1.2"/>
-          ${i === 0 ? `<circle cx="60" cy="140" r="12" fill="none" stroke="${c.color}" stroke-width="1.2"/><line x1="60" y1="140" x2="60" y2="132" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 60 140" to="360 60 140" dur="6s" repeatCount="indefinite"/></line><line x1="60" y1="140" x2="66" y2="140" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 60 140" to="360 60 140" dur="20s" repeatCount="indefinite"/></line>` : ''}
-          ${i === 1 ? `<path d="M 53 132 L 55 130 Q 60 130 60 135 L 60 138 L 65 144 Q 67 146 65 148 L 63 150 Q 58 150 56 148 L 53 145 Q 51 140 53 132 Z" fill="${c.color}" fill-opacity="0.4" stroke="${c.color}" stroke-width="1"/>` : ''}
-          ${i === 2 ? `<path d="M 48 140 Q 48 130 56 130 Q 60 130 60 140 Q 60 150 64 150 Q 72 150 72 140 Q 72 130 64 130 Q 60 130 60 140 Q 60 150 56 150 Q 48 150 48 140 Z" fill="none" stroke="${c.color}" stroke-width="1.4"><animateTransform attributeName="transform" type="rotate" from="0 60 140" to="360 60 140" dur="14s" repeatCount="indefinite"/></path>` : ''}
+          <circle cx="72" cy="140" r="22" fill="#0b0a14" stroke="${c.color}" stroke-width="1.2"/>
+          ${i === 0 ? `<circle cx="72" cy="140" r="12" fill="none" stroke="${c.color}" stroke-width="1.2"/><line x1="72" y1="140" x2="72" y2="132" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="6s" repeatCount="indefinite"/></line><line x1="72" y1="140" x2="78" y2="140" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="20s" repeatCount="indefinite"/></line>` : ''}
+          ${i === 1 ? `<path d="M 65 132 L 67 130 Q 72 130 72 135 L 72 138 L 77 144 Q 79 146 77 148 L 75 150 Q 70 150 68 148 L 65 145 Q 63 140 65 132 Z" fill="${c.color}" fill-opacity="0.4" stroke="${c.color}" stroke-width="1"/>` : ''}
+          ${i === 2 ? `<path d="M 60 140 Q 60 130 68 130 Q 72 130 72 140 Q 72 150 76 150 Q 84 150 84 140 Q 84 130 76 130 Q 72 130 72 140 Q 72 150 68 150 Q 60 150 60 140 Z" fill="none" stroke="${c.color}" stroke-width="1.4"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="14s" repeatCount="indefinite"/></path>` : ''}
 
           <!-- items -->
           ${c.items.map((it, j) => `
-            <g transform="translate(12 ${198 + j * 30})">
+            <g transform="translate(14 ${198 + j * 30})">
               <circle cx="6" cy="8" r="2" fill="${c.color}"/>
-              <text x="18" y="12" font-family="Saira" font-size="11" font-weight="300" fill="#f0ece0">${it}</text>
+              <text x="18" y="12" font-family="Saira" font-size="10.5" font-weight="300" fill="#f0ece0">${it}</text>
             </g>
           `).join('')}
         </g>
