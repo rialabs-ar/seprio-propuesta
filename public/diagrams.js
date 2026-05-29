@@ -702,8 +702,9 @@ const DIAGRAMS = {
         <animate attributeName="opacity" values="0.55;0;0.55" dur="3.6s" repeatCount="indefinite"/>
       </circle>
       <circle cx="260" cy="200" r="56" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.8"/>
-      <text x="260" y="194" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2.5">PLATAFORMA</text>
-      <text x="260" y="218" text-anchor="middle" font-family="Saira" font-size="20" font-weight="600" fill="#ef9f27" letter-spacing="3">SEPRIO IA</text>
+      <text x="260" y="182" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2.5">PLATAFORMA</text>
+      <text x="260" y="208" text-anchor="middle" font-family="Saira" font-size="18" font-weight="600" fill="#ef9f27" letter-spacing="3">SEPRIO</text>
+      <text x="260" y="230" text-anchor="middle" font-family="Saira" font-size="18" font-weight="600" fill="#ef9f27" letter-spacing="3">IA</text>
 
       <!-- Módulos satélite (etiquetas siempre horizontales, sin rotación) -->
       ${[
