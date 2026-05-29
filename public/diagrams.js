@@ -293,10 +293,10 @@ const DIAGRAMS = {
       <line x1="60" y1="230" x2="460" y2="230" stroke="url(#tel-line)" stroke-width="1.6"/>
 
       <!-- Marcadores temporales -->
-      <text x="60" y="260" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">09:14</text>
-      <text x="180" y="260" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">11:32</text>
-      <text x="300" y="260" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">14:08</text>
-      <text x="420" y="260" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">16:45</text>
+      <text x="60" y="260" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">09:14</text>
+      <text x="180" y="260" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">11:32</text>
+      <text x="300" y="260" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">14:08</text>
+      <text x="420" y="260" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="1.5">16:45</text>
 
       <!-- Evento 1: Llamada entrante -->
       <g transform="translate(60 230)">
@@ -345,7 +345,7 @@ const DIAGRAMS = {
       </line>
 
       <!-- Línea inferior: grabación + transcripción -->
-      <rect x="60" y="320" width="400" height="80" rx="4" fill="#100f1e" stroke="#4a8fd4" stroke-width="0.6" stroke-opacity="0.4"/>
+      <rect x="60" y="320" width="400" height="96" rx="4" fill="#100f1e" stroke="#4a8fd4" stroke-width="0.6" stroke-opacity="0.4"/>
       <text x="80" y="344" font-family="DM Mono" font-size="9" fill="#4a8fd4" letter-spacing="1.5">▶ GRABACIÓN · LLAMADA 16:45</text>
       <text x="80" y="364" font-family="Saira" font-size="11" fill="#f0ece0" font-weight="300">"Hola Juan, te llamo para confirmarte que mañana</text>
       <text x="80" y="380" font-family="Saira" font-size="11" fill="#f0ece0" font-weight="300">vino el repuesto que estábamos esperando…"</text>
