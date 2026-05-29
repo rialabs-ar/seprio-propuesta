@@ -988,12 +988,43 @@ h1.slide-title em {
   .slide-actions .btn { padding: 8px 12px; font-size: 10px; }
 
   .footer {
-    padding: 10px 14px;
+    padding: 10px 12px;
+    gap: 8px;
   }
 
   .kbd-hint { display: none; }
-  .progress .dot { width: 16px; }
-  .slide-counter { min-width: 50px; font-size: 10px; }
+  .progress {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 3px;
+    justify-content: center;
+  }
+  .progress .dot {
+    width: 8px;
+    height: 2px;
+    flex-shrink: 0;
+  }
+  .progress .dot.active { transform: scaleY(2); }
+  .slide-counter {
+    min-width: auto;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .nav-controls { gap: 6px; flex-shrink: 0; }
+
+  /* Cover CTAs: stack vertical en mobile para no cortarse */
+  .slide.cover .cover-cta {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 10px;
+  }
+  .slide.cover .cover-cta .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 11px;
+  }
 
   .modal-overlay { padding: 18px; }
   .modal-body { padding: 18px 20px; font-size: 14px; }
