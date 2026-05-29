@@ -549,7 +549,7 @@ const DIAGRAMS = {
           ${c.items.map((it, j) => `
             <g transform="translate(14 ${198 + j * 30})">
               <circle cx="6" cy="8" r="2" fill="${c.color}"/>
-              <text x="18" y="12" font-family="Saira" font-size="10.5" font-weight="300" fill="#f0ece0">${it}</text>
+              <text x="18" y="12" font-family="Saira" font-size="9.5" font-weight="300" fill="#f0ece0">${it}</text>
             </g>
           `).join('')}
         </g>
@@ -559,10 +559,11 @@ const DIAGRAMS = {
       <line x1="50" y1="420" x2="470" y2="420" stroke="url(#pq-grad)" stroke-width="1.4"/>
       <text x="50" y="440" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2">UNA PIEZA QUE CAMBIA TRES COSAS A LA VEZ</text>
 
-      <!-- Partícula viajando por la línea -->
-      <circle r="4" fill="#ef9f27">
+      <!-- Partícula viajando por la línea, cambiando de color según el card que cruza -->
+      <circle r="4" fill="#4a8fd4">
         <animateMotion path="M 50 420 L 470 420" dur="6s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#4a8fd4;#4a8fd4;#ef9f27;#ff1430;#ff1430" keyTimes="0;0.2;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
       </circle>
     </svg>
   `,
