@@ -184,7 +184,7 @@ const DIAGRAMS = {
         </g>
       `).join('')}
 
-      <text x="50" y="430" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2">CANALES → DISTRIBUCIÓN INTELIGENTE → ÁREAS</text>
+      <text x="260" y="430" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2">CANALES → DISTRIBUCIÓN INTELIGENTE → ÁREAS</text>
     </svg>
   `,
 
