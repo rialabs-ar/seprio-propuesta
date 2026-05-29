@@ -42,7 +42,7 @@ const DIAGRAMS = {
       <!-- Módulos satélite -->
       ${[
         {x: 180, y: 140, label: 'Servicios', color: '#10b981', active: true},
-        {x: 360, y: 50, label: 'Comunicaciones', color: '#ef9f27', big: true},
+        {x: 360, y: 40, label: 'Comunicaciones', color: '#ef9f27', big: true, labelAbove: true},
         {x: 540, y: 140, label: 'Ventas', color: '#4a8fd4'},
         {x: 470, y: 220, label: 'Repuestos', color: '#7f77dd'},
         {x: 250, y: 220, label: 'Admin', color: '#06b6d4'}
@@ -50,7 +50,7 @@ const DIAGRAMS = {
         <g>
           <circle cx="${m.x}" cy="${m.y}" r="${m.big ? 26 : 16}" fill="#0b0a14" stroke="${m.color}" stroke-width="${m.big ? 1.8 : 1.2}" opacity="${m.active || m.big ? 1 : 0.6}"/>
           ${m.big ? `<circle cx="${m.x}" cy="${m.y}" r="26" fill="none" stroke="${m.color}" stroke-width="1" opacity="0.4"><animate attributeName="r" values="26;38;26" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/></circle>` : ''}
-          <text x="${m.x}" y="${m.y + (m.big ? 44 : 32)}" text-anchor="middle" font-family="DM Mono" font-size="9" fill="${m.color}" letter-spacing="1.5">${m.label.toUpperCase()}</text>
+          <text x="${m.x}" y="${m.labelAbove ? m.y - 32 : m.y + (m.big ? 44 : 32)}" text-anchor="middle" font-family="DM Mono" font-size="9" fill="${m.color}" letter-spacing="1.5">${m.label.toUpperCase()}</text>
           <line x1="360" y1="140" x2="${m.x}" y2="${m.y}" stroke="${m.color}" stroke-width="0.6" stroke-opacity="0.3" stroke-dasharray="2 3">
             <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="${3 + i * 0.3}s" repeatCount="indefinite"/>
           </line>
