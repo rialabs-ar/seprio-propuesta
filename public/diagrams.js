@@ -306,32 +306,32 @@ const DIAGRAMS = {
           <animate attributeName="r" values="10;22;10" dur="3s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
         </circle>
-        <text x="0" y="-26" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#4a8fd4" letter-spacing="1.5">LLAMADA · 4:32</text>
-        <text x="0" y="-14" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">entrante</text>
+        <text x="0" y="-38" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#4a8fd4" letter-spacing="1.5">LLAMADA · 4:32</text>
+        <text x="0" y="-22" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">entrante</text>
       </g>
 
       <!-- Evento 2: WhatsApp -->
       <g transform="translate(180 230)">
         <circle r="10" fill="#0b0a14" stroke="#10b981" stroke-width="1.6"/>
         <path d="M -4 -3 L 4 -3 L 4 2 L 0 2 L -3 5 L -3 2 L -4 2 Z" stroke="#10b981" stroke-width="1" fill="#10b981" fill-opacity="0.2"/>
-        <text x="0" y="-26" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#10b981" letter-spacing="1.5">WHATSAPP</text>
-        <text x="0" y="-14" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">"mandé fotos"</text>
+        <text x="0" y="-38" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#10b981" letter-spacing="1.5">WHATSAPP</text>
+        <text x="0" y="-22" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">"mandé fotos"</text>
       </g>
 
       <!-- Evento 3: Audio -->
       <g transform="translate(300 230)">
         <circle r="10" fill="#0b0a14" stroke="#7f77dd" stroke-width="1.6"/>
         <path d="M -4 -2 L -4 2 M -1 -4 L -1 4 M 2 -3 L 2 3 M 5 -1 L 5 1" stroke="#7f77dd" stroke-width="1" stroke-linecap="round"/>
-        <text x="0" y="-26" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#7f77dd" letter-spacing="1.5">AUDIO · 0:42</text>
-        <text x="0" y="-14" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">cliente</text>
+        <text x="0" y="-38" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#7f77dd" letter-spacing="1.5">AUDIO · 0:42</text>
+        <text x="0" y="-22" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">cliente</text>
       </g>
 
       <!-- Evento 4: Llamada saliente -->
       <g transform="translate(420 230)">
         <circle r="10" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.6"/>
         <path d="M -4 2 Q -4 -4 4 -4" stroke="#ef9f27" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <text x="0" y="-26" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#ef9f27" letter-spacing="1.5">LLAMADA · 2:14</text>
-        <text x="0" y="-14" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">saliente</text>
+        <text x="0" y="-38" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#ef9f27" letter-spacing="1.5">LLAMADA · 2:14</text>
+        <text x="0" y="-22" text-anchor="middle" font-family="Saira" font-size="10" fill="#f0ece0">saliente</text>
       </g>
 
       <!-- Header: número oficial -->
@@ -351,12 +351,17 @@ const DIAGRAMS = {
       <text x="80" y="380" font-family="Saira" font-size="11" fill="#f0ece0" font-weight="300">vino el repuesto que estábamos esperando…"</text>
       <text x="80" y="396" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="1.5">TRANSCRIPCIÓN AUTOMÁTICA · BUSCABLE</text>
 
-      <!-- Onda animada -->
-      ${Array.from({length: 30}).map((_, i) => `
-        <rect x="${320 + i * 4}" y="${346 + Math.sin(i) * 2}" width="2" height="${4 + Math.abs(Math.sin(i)) * 6}" fill="#4a8fd4" opacity="0.5">
-          <animate attributeName="height" values="${4 + Math.abs(Math.sin(i)) * 6};${4 + Math.abs(Math.sin(i+4)) * 6};${4 + Math.abs(Math.sin(i)) * 6}" dur="${1 + (i % 3) * 0.3}s" repeatCount="indefinite"/>
+      <!-- Onda animada, centrada en la fila de GRABACIÓN (y≈340) -->
+      ${Array.from({length: 18}).map((_, i) => {
+        const cy = 340;
+        const h1 = 3 + Math.abs(Math.sin(i)) * 5;
+        const h2 = 3 + Math.abs(Math.sin(i + 4)) * 5;
+        return `
+        <rect x="${340 + i * 4}" y="${cy - h1/2}" width="2" height="${h1}" fill="#4a8fd4" opacity="0.55">
+          <animate attributeName="height" values="${h1};${h2};${h1}" dur="${1 + (i % 3) * 0.3}s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="${cy - h1/2};${cy - h2/2};${cy - h1/2}" dur="${1 + (i % 3) * 0.3}s" repeatCount="indefinite"/>
         </rect>
-      `).join('')}
+      `;}).join('')}
     </svg>
   `,
 
