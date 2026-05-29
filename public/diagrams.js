@@ -133,11 +133,10 @@ const DIAGRAMS = {
 
       <!-- Clientes (entradas) izquierda -->
       ${[
-        {y: 60, label: 'WhatsApp', color: '#4a8fd4'},
-        {y: 130, label: 'Llamada', color: '#7f77dd'},
-        {y: 200, label: 'Audio', color: '#06b6d4'},
-        {y: 270, label: 'Foto', color: '#10b981'},
-        {y: 340, label: 'Video', color: '#ff1430'}
+        {y: 90, label: 'WhatsApp', color: '#4a8fd4'},
+        {y: 185, label: 'Llamada', color: '#7f77dd'},
+        {y: 280, label: 'Multimedia', color: '#10b981'},
+        {y: 370, label: 'Campañas', color: '#ff1430'}
       ].map((c, i) => `
         <g>
           <circle cx="50" cy="${c.y}" r="14" fill="#0b0a14" stroke="${c.color}" stroke-width="1.2"/>
