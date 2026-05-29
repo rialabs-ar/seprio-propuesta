@@ -213,11 +213,16 @@ const DIAGRAMS = {
           <path d="M 13 18 L 13 24 M 16 16 L 16 26 M 19 18 L 19 24" stroke="#4a8fd4" stroke-width="1" stroke-linecap="round"/>
           <text x="32" y="18" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="1">AUDIO · 0:34</text>
           <text x="32" y="32" font-family="Saira" font-size="10" fill="#f0ece0">"hace un ruido raro cuando…"</text>
-          ${Array.from({length: 16}).map((_, i) => `
-            <rect x="${110 + i * 6}" y="${18 + (Math.sin(i) * 2)}" width="2" height="${4 + Math.abs(Math.sin(i + 1)) * 8}" fill="#4a8fd4" opacity="0.5">
-              <animate attributeName="height" values="${4 + Math.abs(Math.sin(i + 1)) * 8};${4 + Math.abs(Math.sin(i + 3)) * 8};${4 + Math.abs(Math.sin(i + 1)) * 8}" dur="${1 + (i % 3) * 0.3}s" repeatCount="indefinite"/>
+          ${Array.from({length: 9}).map((_, i) => {
+            const x = 170 + i * 4.5;
+            const h1 = 3 + Math.abs(Math.sin(i + 1)) * 6;
+            const h2 = 3 + Math.abs(Math.sin(i + 3)) * 6;
+            return `
+            <rect x="${x}" y="${18 - h1/2}" width="2" height="${h1}" fill="#4a8fd4" opacity="0.55">
+              <animate attributeName="height" values="${h1};${h2};${h1}" dur="${1 + (i % 3) * 0.3}s" repeatCount="indefinite"/>
+              <animate attributeName="y" values="${18 - h1/2};${18 - h2/2};${18 - h1/2}" dur="${1 + (i % 3) * 0.3}s" repeatCount="indefinite"/>
             </rect>
-          `).join('')}
+          `;}).join('')}
         </g>
 
         <!-- Foto -->
