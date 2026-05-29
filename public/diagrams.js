@@ -29,11 +29,11 @@ const DIAGRAMS = {
       </circle>
 
       <!-- Núcleo central -->
-      <circle cx="360" cy="140" r="34" fill="none" stroke="#ef9f27" stroke-width="1.2" stroke-opacity="0.5">
-        <animate attributeName="r" values="32;38;32" dur="5s" repeatCount="indefinite"/>
+      <circle cx="360" cy="140" r="42" fill="none" stroke="#ef9f27" stroke-width="1.2" stroke-opacity="0.5">
+        <animate attributeName="r" values="40;48;40" dur="5s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="360" cy="140" r="22" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.5"/>
-      <text x="360" y="146" text-anchor="middle" font-family="DM Mono" font-size="11" font-weight="500" fill="#ef9f27">SEPRIO</text>
+      <circle cx="360" cy="140" r="30" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.5"/>
+      <text x="360" y="146" text-anchor="middle" font-family="DM Mono" font-size="13" font-weight="500" fill="#ef9f27" letter-spacing="1.5">SEPRIO</text>
 
       <!-- Órbitas conectando módulos -->
       <ellipse cx="360" cy="140" rx="180" ry="90" fill="none" stroke="#ef9f27" stroke-width="0.5" stroke-opacity="0.18" stroke-dasharray="3 4"/>
@@ -59,7 +59,7 @@ const DIAGRAMS = {
 
       <!-- Línea base decorativa -->
       <line x1="60" y1="262" x2="660" y2="262" stroke="url(#cov-line)" stroke-width="1"/>
-      <text x="60" y="276" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="2">PLATAFORMA SEPRIO · ARQUITECTURA MODULAR</text>
+      <text x="360" y="276" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="2">PLATAFORMA SEPRIO · ARQUITECTURA MODULAR</text>
     </svg>
   `,
 
@@ -586,10 +586,10 @@ const DIAGRAMS = {
 
       <!-- Módulos -->
       ${[
-        {x: 70,  y: 80,  w: 130, h: 64, label: 'Servicios', status: 'ACTIVO', sub: 'LPR · flujo taller', color: '#10b981', done: true},
-        {x: 320, y: 80,  w: 130, h: 64, label: 'Comunicaciones', status: 'PROPUESTA', sub: 'esta presentación', color: '#ef9f27', proposed: true},
-        {x: 70,  y: 316, w: 130, h: 64, label: 'Ventas', status: 'PRÓXIMO', sub: 'pipeline comercial', color: '#4a8fd4'},
-        {x: 320, y: 316, w: 130, h: 64, label: 'Repuestos · Admin', status: 'FUTURO', sub: 'stock · facturación', color: '#7f77dd'}
+        {x: 50,  y: 80,  w: 150, h: 64, label: 'Servicios', status: 'ACTIVO', sub: 'LPR · flujo taller', color: '#10b981', done: true},
+        {x: 320, y: 80,  w: 150, h: 64, label: 'Comunicaciones', status: 'PROPUESTA', sub: 'esta presentación', color: '#ef9f27', proposed: true},
+        {x: 50,  y: 316, w: 150, h: 64, label: 'Ventas', status: 'POSIBLE', sub: 'pipeline comercial', color: '#4a8fd4'},
+        {x: 320, y: 316, w: 150, h: 64, label: 'Repuestos · Admin', status: 'POSIBLE', sub: 'stock · facturación', color: '#7f77dd'}
       ].map((m, i) => `
         <g>
           <!-- conexión al núcleo -->
@@ -612,28 +612,29 @@ const DIAGRAMS = {
           ${m.done ? `<circle cx="${m.x + m.w - 14}" cy="${m.y + 14}" r="3" fill="${m.color}"/>` : ''}
           ${m.proposed ? `<circle cx="${m.x + m.w - 14}" cy="${m.y + 14}" r="3" fill="${m.color}"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.6s" repeatCount="indefinite"/></circle>` : ''}
 
-          <text x="${m.x + 10}" y="${m.y + 38}" font-family="Saira" font-size="14" font-weight="500" fill="#f0ece0">${m.label}</text>
+          <text x="${m.x + 10}" y="${m.y + 38}" font-family="Saira" font-size="13" font-weight="500" fill="#f0ece0">${m.label}</text>
           <text x="${m.x + 10}" y="${m.y + 54}" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="1">${m.sub}</text>
         </g>
       `).join('')}
 
-      <!-- Roles por área (laterales) -->
-      <g transform="translate(20 30)">
-        <text x="0" y="0" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="2">ROL · SERVICE</text>
-        <circle cx="-8" cy="-3" r="2" fill="#10b981"/>
-      </g>
-      <g transform="translate(460 30)">
-        <text x="0" y="0" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="2">ROL · VENTAS</text>
-        <circle cx="-8" cy="-3" r="2" fill="#4a8fd4"/>
-      </g>
-      <g transform="translate(20 408)">
-        <text x="0" y="0" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="2">ROL · REPUESTOS</text>
-        <circle cx="-8" cy="-3" r="2" fill="#7f77dd"/>
-      </g>
-      <g transform="translate(460 408)">
-        <text x="0" y="0" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="2">ROL · GERENCIA</text>
-        <circle cx="-8" cy="-3" r="2" fill="#ef9f27"/>
-      </g>
+      <!-- Avatares de rol por área (cada usuario sólo accede a su área) -->
+      ${[
+        {x: 28,  y: 30,  color: '#10b981', label: 'SERVICE',   anchor: 'start', tx: 18},
+        {x: 492, y: 30,  color: '#ef9f27', label: 'GERENCIA',  anchor: 'end',   tx: -18},
+        {x: 28,  y: 418, color: '#4a8fd4', label: 'VENTAS',    anchor: 'start', tx: 18},
+        {x: 492, y: 418, color: '#7f77dd', label: 'REPUESTOS', anchor: 'end',   tx: -18}
+      ].map(av => {
+        const rgba = av.color === '#10b981' ? '16,185,129' :
+                     av.color === '#ef9f27' ? '239,159,39' :
+                     av.color === '#4a8fd4' ? '74,143,212' : '127,119,221';
+        return `
+        <g transform="translate(${av.x} ${av.y})">
+          <circle r="11" fill="rgba(${rgba},0.12)" stroke="${av.color}" stroke-width="1"/>
+          <circle cy="-2.5" r="3" fill="${av.color}"/>
+          <path d="M -5.5 6 Q 0 1.5 5.5 6" stroke="${av.color}" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <text x="${av.tx}" y="3" text-anchor="${av.anchor}" font-family="DM Mono" font-size="8" fill="${av.color}" letter-spacing="1.5">${av.label}</text>
+        </g>
+      `;}).join('')}
 
       <!-- Caption -->
       <text x="260" y="445" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="2.5">CADA ROL VE SÓLO SU MÓDULO · NÚCLEO COMPARTE DATOS Y IA</text>
