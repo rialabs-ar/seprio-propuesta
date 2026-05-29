@@ -543,21 +543,20 @@ const DIAGRAMS = {
           <circle cx="72" cy="140" r="22" fill="#0b0a14" stroke="${c.color}" stroke-width="1.2"/>
           ${i === 0 ? `<circle cx="72" cy="140" r="12" fill="none" stroke="${c.color}" stroke-width="1.2"/><line x1="72" y1="140" x2="72" y2="132" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="6s" repeatCount="indefinite"/></line><line x1="72" y1="140" x2="78" y2="140" stroke="${c.color}" stroke-width="1.4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 72 140" to="360 72 140" dur="20s" repeatCount="indefinite"/></line>` : ''}
           ${i === 1 ? `
-            <!-- Teléfono móvil -->
-            <rect x="64" y="125" width="16" height="30" rx="2.5" fill="none" stroke="${c.color}" stroke-width="1.4"/>
-            <line x1="68" y1="130" x2="76" y2="130" stroke="${c.color}" stroke-width="1.1" stroke-linecap="round"/>
-            <circle cx="72" cy="150" r="1.4" fill="none" stroke="${c.color}" stroke-width="0.9"/>
-            <line x1="68" y1="138" x2="76" y2="138" stroke="${c.color}" stroke-width="0.6" stroke-opacity="0.4"/>
+            <!-- Teléfono móvil (compacto, tamaño similar al reloj) -->
+            <rect x="66" y="130" width="12" height="20" rx="2" fill="none" stroke="${c.color}" stroke-width="1.4"/>
+            <line x1="69" y1="133" x2="75" y2="133" stroke="${c.color}" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="72" cy="147" r="1.1" fill="none" stroke="${c.color}" stroke-width="0.9"/>
           ` : ''}
           ${i === 2 ? `
-            <!-- Gráfico de métricas (barras crecientes + flecha) -->
-            <line x1="60" y1="153" x2="84" y2="153" stroke="${c.color}" stroke-width="0.7" stroke-opacity="0.5"/>
-            <rect x="62" y="146" width="3.4" height="7" fill="${c.color}" opacity="0.55"/>
-            <rect x="68" y="141" width="3.4" height="12" fill="${c.color}" opacity="0.7"/>
-            <rect x="74" y="135" width="3.4" height="18" fill="${c.color}" opacity="0.85"/>
-            <rect x="80" y="129" width="3.4" height="24" fill="${c.color}"/>
-            <path d="M 83.7 129 L 81 132" stroke="${c.color}" stroke-width="1" fill="none" stroke-linecap="round"/>
-            <path d="M 83.7 129 L 86.5 132" stroke="${c.color}" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <!-- Gráfico de métricas (barras + flecha ascendente bien visible) -->
+            <line x1="60" y1="151" x2="84" y2="151" stroke="${c.color}" stroke-width="0.7" stroke-opacity="0.5"/>
+            <rect x="62" y="146" width="3.4" height="5" fill="${c.color}" opacity="0.55"/>
+            <rect x="68" y="143" width="3.4" height="8" fill="${c.color}" opacity="0.7"/>
+            <rect x="74" y="139" width="3.4" height="12" fill="${c.color}" opacity="0.85"/>
+            <rect x="80" y="135" width="3.4" height="16" fill="${c.color}"/>
+            <line x1="62" y1="138" x2="84" y2="128" stroke="${c.color}" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M 84 128 L 79 128 M 84 128 L 84 133" stroke="${c.color}" stroke-width="1.1" fill="none" stroke-linecap="round"/>
           ` : ''}
 
           <!-- items -->
@@ -572,7 +571,7 @@ const DIAGRAMS = {
 
       <!-- Línea de continuidad inferior -->
       <line x1="50" y1="420" x2="470" y2="420" stroke="url(#pq-grad)" stroke-width="1.4"/>
-      <text x="50" y="440" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2">UNA PIEZA QUE CAMBIA TRES COSAS A LA VEZ</text>
+      <text x="260" y="440" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8a8478" letter-spacing="2">UNA PIEZA QUE CAMBIA TRES COSAS A LA VEZ</text>
 
       <!-- Partícula viajando por la línea, cambiando de color según el card que cruza -->
       <circle r="4" fill="#4a8fd4">
