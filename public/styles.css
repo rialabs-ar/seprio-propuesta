@@ -99,11 +99,22 @@ body::after {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--muted);
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+
+.brand-ria:hover {
+  color: var(--gold-hi);
+}
+
+.brand-ria:hover img {
+  opacity: 1;
 }
 
 .brand-ria img {
   width: 22px; height: 22px;
   opacity: 0.9;
+  transition: opacity 220ms ease;
 }
 
 .brand-seprio {
