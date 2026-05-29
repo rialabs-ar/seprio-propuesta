@@ -382,16 +382,16 @@ const DIAGRAMS = {
 
       <!-- KPI cards -->
       ${[
-        {x: 56, y: 84, label: 'Hoy', value: '47', color: '#ef9f27', sub: 'conversaciones'},
-        {x: 160, y: 84, label: 'Resp <2m', value: '82%', color: '#10b981', sub: 'tiempo respuesta'},
-        {x: 264, y: 84, label: 'Sin contestar', value: '3', color: '#ff1430', sub: 'urgente'},
+        {x: 50, y: 84, label: 'Hoy', value: '47', color: '#ef9f27', sub: 'conversaciones'},
+        {x: 156, y: 84, label: 'Resp <2m', value: '82%', color: '#10b981', sub: 'tiempo respuesta'},
+        {x: 262, y: 84, label: 'Sin contestar', value: '3', color: '#ff1430', sub: 'urgente'},
         {x: 368, y: 84, label: 'Leads', value: '+12', color: '#4a8fd4', sub: 'avanzaron'}
       ].map((k, i) => `
         <g>
-          <rect x="${k.x}" y="${k.y}" width="92" height="72" rx="3" fill="url(#prof-row)" stroke="${k.color}" stroke-width="0.8" stroke-opacity="0.5"/>
-          <text x="${k.x + 12}" y="${k.y + 18}" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="1.5">${k.label.toUpperCase()}</text>
-          <text x="${k.x + 12}" y="${k.y + 50}" font-family="Saira" font-size="26" font-weight="500" fill="${k.color}">${k.value}</text>
-          <text x="${k.x + 12}" y="${k.y + 64}" font-family="DM Mono" font-size="7" fill="#8a8478" letter-spacing="1">${k.sub}</text>
+          <rect x="${k.x}" y="${k.y}" width="102" height="76" rx="3" fill="url(#prof-row)" stroke="${k.color}" stroke-width="0.8" stroke-opacity="0.5"/>
+          <text x="${k.x + 12}" y="${k.y + 20}" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="0.8">${k.label.toUpperCase()}</text>
+          <text x="${k.x + 12}" y="${k.y + 52}" font-family="Saira" font-size="26" font-weight="500" fill="${k.color}">${k.value}</text>
+          <text x="${k.x + 12}" y="${k.y + 66}" font-family="DM Mono" font-size="7" fill="#8a8478" letter-spacing="0.4">${k.sub}</text>
         </g>
       `).join('')}
 
