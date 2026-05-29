@@ -29,11 +29,11 @@ const DIAGRAMS = {
       </circle>
 
       <!-- Núcleo central -->
-      <circle cx="360" cy="140" r="42" fill="none" stroke="#ef9f27" stroke-width="1.2" stroke-opacity="0.5">
-        <animate attributeName="r" values="40;48;40" dur="5s" repeatCount="indefinite"/>
+      <circle cx="360" cy="140" r="50" fill="none" stroke="#ef9f27" stroke-width="1.2" stroke-opacity="0.5">
+        <animate attributeName="r" values="48;56;48" dur="5s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="360" cy="140" r="30" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.5"/>
-      <text x="360" y="146" text-anchor="middle" font-family="DM Mono" font-size="13" font-weight="500" fill="#ef9f27" letter-spacing="1.5">SEPRIO</text>
+      <circle cx="360" cy="140" r="38" fill="#0b0a14" stroke="#ef9f27" stroke-width="1.5"/>
+      <text x="360" y="146" text-anchor="middle" font-family="DM Mono" font-size="14" font-weight="500" fill="#ef9f27" letter-spacing="2">SEPRIO</text>
 
       <!-- Órbitas conectando módulos -->
       <ellipse cx="360" cy="140" rx="180" ry="90" fill="none" stroke="#ef9f27" stroke-width="0.5" stroke-opacity="0.18" stroke-dasharray="3 4"/>
