@@ -424,8 +424,8 @@ const DIAGRAMS = {
       `).join('')}
 
       <!-- Footer auditable -->
-      <text x="56" y="408" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="1.5">CADA CONVERSACIÓN AUDITABLE · CADA NÚMERO TRAZABLE</text>
-      <circle cx="464" cy="404" r="3" fill="#10b981">
+      <text x="260" y="408" text-anchor="middle" font-family="DM Mono" font-size="8" fill="#8a8478" letter-spacing="1.5">CADA CONVERSACIÓN AUDITABLE · CADA NÚMERO TRAZABLE</text>
+      <circle cx="490" cy="404" r="3" fill="#10b981">
         <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
       </circle>
     </svg>
